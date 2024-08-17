@@ -49,9 +49,9 @@ def main(args):
     # which is responsible for generating sections with citations.
     conv_simulator_lm = OpenAIModel(model='gpt-3.5-turbo', max_tokens=500, **openai_kwargs)
     question_asker_lm = OpenAIModel(model='gpt-3.5-turbo', max_tokens=500, **openai_kwargs)
-    outline_gen_lm = OpenAIModel(model='gpt-4-0125-preview', max_tokens=400, **openai_kwargs)
-    article_gen_lm = OpenAIModel(model='gpt-4-0125-preview', max_tokens=700, **openai_kwargs)
-    article_polish_lm = OpenAIModel(model='gpt-4-0125-preview', max_tokens=4000, **openai_kwargs)
+    outline_gen_lm = OpenAIModel(model='gpt-4o-2024-05-13', max_tokens=400, **openai_kwargs)
+    article_gen_lm = OpenAIModel(model='gpt-4o-2024-05-13', max_tokens=700, **openai_kwargs)
+    article_polish_lm = OpenAIModel(model='gpt-4o-2024-05-13', max_tokens=4000, **openai_kwargs)
 
     lm_configs.set_conv_simulator_lm(conv_simulator_lm)
     lm_configs.set_question_asker_lm(question_asker_lm)
@@ -97,7 +97,7 @@ if __name__ == '__main__':
                         help='Maximum number of threads to use. The information seeking part and the article generation'
                              'part can speed up by using multiple threads. Consider reducing it if keep getting '
                              '"Exceed rate limit" error when calling LM API.')
-    parser.add_argument('--retriever', type=str, choices=['bing', 'you'],
+    parser.add_argument('--retriever', type=str, choices=['bing', 'you'], default='bing',
                         help='The search engine API to use for retrieving information.')
     # stage of the pipeline
     parser.add_argument('--do-research', action='store_true',

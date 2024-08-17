@@ -91,6 +91,9 @@ python examples/run_storm_wiki_gpt.py \
     --do-generate-article \
     --do-polish-article
 ```
+
+python examples/run_storm_wiki_gpt.py --do-research --do-generate-outline --do-generate-article --do-polish-article
+
 - `--do-research`: if True, simulate conversation to research the topic; otherwise, load the results.
 - `--do-generate-outline`: If True, generate an outline for the topic; otherwise, load the results.
 - `--do-generate-article`: If True, generate an article for the topic; otherwise, load the results.

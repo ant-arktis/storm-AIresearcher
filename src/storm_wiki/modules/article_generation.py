@@ -139,6 +139,9 @@ class WriteSection(dspy.Signature):
     info = dspy.InputField(prefix="The collected information:\n", format=str)
     topic = dspy.InputField(prefix="The topic of the page: ", format=str)
     section = dspy.InputField(prefix="The section you need to write: ", format=str)
+
+    # DM  for grade 1 elementary students using level appropriate language 
+    
     output = dspy.OutputField(
         prefix="Write the section with proper inline citations (Start your writing with # section title. Don't include the page title or try to write other sections):\n",
         format=str

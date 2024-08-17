@@ -312,8 +312,8 @@ class FileIOHelper:
             return json.load(fr)
 
     @staticmethod
-    def write_str(s, path):
-        with open(path, 'w') as f:
+    def write_str(s, path, encoding="utf-8"):
+        with open(path, 'w', encoding=encoding) as f:
             f.write(s)
 
     @staticmethod
